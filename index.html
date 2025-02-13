@@ -39,6 +39,16 @@
       -moz-osx-font-smoothing: grayscale;
       transition: background-color var(--transition-duration);
     }
+    #progressbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 5px;
+      background-color: var(--accent-color);
+      z-index: 9999;
+      transition: width 0.25s ease-out;
+    }
     header {
       background: linear-gradient(135deg, var(--header-bg), #292929);
       padding: 4em 1em;
@@ -177,6 +187,8 @@
   </style>
 </head>
 <body>
+  <div id="progressbar"></div>
+
   <button class="theme-toggle" aria-label="Переключить тему">🌙</button>
   <header>
     <h1>Привет, мир!</h1>
@@ -214,6 +226,12 @@
     <p>© 2025 Сашок Все права защищены.</p>
   </footer>
   <script>
+    window.addEventListener('scroll', () => {
+      const progressBar = document.getElementById('progressbar');
+      const totalHeight = document.body.scrollHeight - window.innerHeight;
+      const progress = (window.scrollY / totalHeight) * 100;
+      progressBar.style.width = progress + '%';
+    });
     // Переключение темы (тёмная/светлая)
     const toggleButton = document.querySelector('.theme-toggle');
     toggleButton.addEventListener('click', () => {
