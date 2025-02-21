@@ -39,67 +39,6 @@
         100% { background-position: 0% 50%; }
     }
 
-    /* Обновлённые стили кубов */
-    .cube-container {
-        position: fixed;
-        z-index: -1;
-        perspective: 1000px;
-        pointer-events: none; /* Убираем взаимодействие на мобильных по умолчанию */
-    }
-
-    #cube1 { top: 20%; left: 10%; width: 150px; height: 150px; }
-    #cube2 { top: 50%; left: 80%; width: 200px; height: 200px; }
-    #cube3 { top: 80%; left: 30%; width: 100px; height: 100px; }
-    #cube4 { top: 10%; right: 10%; width: 120px; height: 120px; }
-    #cube5 { bottom: 10%; left: 10%; width: 180px; height: 180px; }
-    #cube6 { top: 50%; left: 50%; transform: translate(-50%, -50%); width: 90px; height: 90px; }
-
-    .cube {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform-style: preserve-3d;
-        transition: transform 0.1s ease-out;
-        pointer-events: auto; /* Включаем взаимодействие только для куба */
-    }
-
-    .cube-face {
-        position: absolute;
-        border: 2px solid #00ffcc;
-        background: transparent;
-        box-shadow: 0 0 10px rgba(0, 255, 204, 0.3);
-    }
-
-    #cube1 .cube { width: 150px; height: 150px; }
-    #cube1 .cube-face { width: 150px; height: 150px; transform: translateZ(75px); }
-    #cube2 .cube { width: 200px; height: 200px; }
-    #cube2 .cube-face { width: 200px; height: 200px; transform: translateZ(100px); }
-    #cube3 .cube { width: 100px; height: 100px; }
-    #cube3 .cube-face { width: 100px; height: 100px; transform: translateZ(50px); }
-    #cube4 .cube { width: 120px; height: 120px; }
-    #cube4 .cube-face { width: 120px; height: 120px; transform: translateZ(60px); }
-    #cube5 .cube { width: 180px; height: 180px; }
-    #cube5 .cube-face { width: 180px; height: 180px; transform: translateZ(90px); }
-    #cube6 .cube { width: 90px; height: 90px; }
-    #cube6 .cube-face { width: 90px; height: 90px; transform: translateZ(45px); }
-
-    .cube-face.front  { transform: rotateY(0deg) translateZ(var(--translateZ)); }
-    .cube-face.back   { transform: rotateY(180deg) translateZ(var(--translateZ)); }
-    .cube-face.right  { transform: rotateY(90deg) translateZ(var(--translateZ)); }
-    .cube-face.left   { transform: rotateY(-90deg) translateZ(var(--translateZ)); }
-    .cube-face.top    { transform: rotateX(90deg) translateZ(var(--translateZ)); }
-    .cube-face.bottom { transform: rotateX(-90deg) translateZ(var(--translateZ)); }
-
-    body.light-theme .cube-face {
-        border-color: #0066cc;
-        box-shadow: 0 0 10px rgba(0, 102, 204, 0.3);
-    }
-
-    @media (max-width: 768px) {
-        #cube2, #cube4, #cube6 { display: none; } /* Уменьшаем количество кубов на мобильных */
-        .cube-container { transition: none; } /* Убираем переходы для экономии ресурсов */
-    }
-
     nav {
         position: fixed;
         top: 0;
@@ -528,67 +467,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="dark-theme">
-    <div class="cube-container" id="cube1">
-        <div class="cube">
-            <div class="cube-face front"></div>
-            <div class="cube-face back"></div>
-            <div class="cube-face right"></div>
-            <div class="cube-face left"></div>
-            <div class="cube-face top"></div>
-            <div class="cube-face bottom"></div>
-        </div>
-    </div>
-    <div class="cube-container" id="cube2">
-        <div class="cube">
-            <div class="cube-face front"></div>
-            <div class="cube-face back"></div>
-            <div class="cube-face right"></div>
-            <div class="cube-face left"></div>
-            <div class="cube-face top"></div>
-            <div class="cube-face bottom"></div>
-        </div>
-    </div>
-    <div class="cube-container" id="cube3">
-        <div class="cube">
-            <div class="cube-face front"></div>
-            <div class="cube-face back"></div>
-            <div class="cube-face right"></div>
-            <div class="cube-face left"></div>
-            <div class="cube-face top"></div>
-            <div class="cube-face bottom"></div>
-        </div>
-    </div>
-    <div class="cube-container" id="cube4">
-        <div class="cube">
-            <div class="cube-face front"></div>
-            <div class="cube-face back"></div>
-            <div class="cube-face right"></div>
-            <div class="cube-face left"></div>
-            <div class="cube-face top"></div>
-            <div class="cube-face bottom"></div>
-        </div>
-    </div>
-    <div class="cube-container" id="cube5">
-        <div class="cube">
-            <div class="cube-face front"></div>
-            <div class="cube-face back"></div>
-            <div class="cube-face right"></div>
-            <div class="cube-face left"></div>
-            <div class="cube-face top"></div>
-            <div class="cube-face bottom"></div>
-        </div>
-    </div>
-    <div class="cube-container" id="cube6">
-        <div class="cube">
-            <div class="cube-face front"></div>
-            <div class="cube-face back"></div>
-            <div class="cube-face right"></div>
-            <div class="cube-face left"></div>
-            <div class="cube-face top"></div>
-            <div class="cube-face bottom"></div>
-        </div>
-    </div>
-
     <nav>
         <button class="nav-toggle" aria-label="Открыть/Закрыть меню">☰</button>
         <div class="nav-menu">
@@ -634,22 +512,22 @@
             <h2 class="typing-text">Фотографии</h2>
             <div class="content-grid">
                 <div class="card">
-                    <img src="photo1.png" alt="Photo 1" class="photo">
+                    <img src="photo1.png" alt="Photo 1" class="photo" loading="lazy">
                     <h3>Момент 1</h3>
                     <p>Это фото напоминает мне о начале моего пути.</p>
                 </div>
                 <div class="card">
-                    <img src="photo2.png" alt="Photo 2" class="photo">
+                    <img src="photo2.png" alt="Photo 2" class="photo" loading="lazy">
                     <h3>Момент 2</h3>
                     <p>Здесь я впервые почувствовал свободу.</p>
                 </div>
                 <div class="card">
-                    <img src="photo3.png" alt="Photo 3" class="photo">
+                    <img src="photo3.png" alt="Photo 3" class="photo" loading="lazy">
                     <h3>Момент 3</h3>
                     <p>Этот снимок — символ моей силы.</p>
                 </div>
                 <div class="card">
-                    <img src="photo4.png" alt="Photo 4" class="photo">
+                    <img src="photo4.png" alt="Photo 4" class="photo" loading="lazy">
                     <h3>Момент 4</h3>
                     <p>Моя новая глава начинается здесь.</p>
                 </div>
@@ -814,82 +692,6 @@
             element.classList.toggle('light-theme', isLight);
         });
     });
-
-    // Обновлённая логика анимации кубов
-    const cubes = document.querySelectorAll('.cube');
-    const isMobile = window.innerWidth <= 768;
-    const cubeData = Array.from(cubes).map(cube => ({
-        element: cube,
-        angleX: Math.random() * 360,
-        angleY: Math.random() * 360,
-        angleZ: Math.random() * 360,
-        speedX: (Math.random() * 0.5 + 0.5) * (isMobile ? 0.5 : 1), // Уменьшенная скорость на мобильных
-        speedY: (Math.random() * 0.5 + 0.5) * (isMobile ? 0.5 : 1),
-        speedZ: (Math.random() * 0.5 + 0.5) * (isMobile ? 0.5 : 1),
-        interacting: false
-    }));
-
-    function animateCubes(timestamp) {
-        cubeData.forEach(data => {
-            if (!data.interacting) {
-                data.angleX += data.speedX;
-                data.angleY += data.speedY;
-                data.angleZ += data.speedZ;
-
-                // Ограничиваем угол для предотвращения переполнения
-                data.angleX = data.angleX % 360;
-                data.angleY = data.angleY % 360;
-                data.angleZ = data.angleZ % 360;
-
-                data.element.style.transform = `rotateX(${data.angleX}deg) rotateY(${data.angleY}deg) rotateZ(${data.angleZ}deg)`;
-            }
-        });
-        requestAnimationFrame(animateCubes);
-    }
-
-    // Реакция на движение мыши
-    cubes.forEach((cube, index) => {
-        const data = cubeData[index];
-
-        cube.addEventListener('mousemove', (e) => {
-            data.interacting = true;
-            const rect = cube.getBoundingClientRect();
-            const x = e.clientX - rect.left - rect.width / 2;
-            const y = e.clientY - rect.top - rect.height / 2;
-            cube.style.transform = `rotateY(${x * 0.1}deg) rotateX(${-y * 0.1}deg)`;
-        });
-
-        cube.addEventListener('mouseleave', () => {
-            data.interacting = false;
-        });
-
-        // Поддержка сенсорных экранов
-        cube.addEventListener('touchmove', (e) => {
-            e.preventDefault();
-            data.interacting = true;
-            const touch = e.touches[0];
-            const rect = cube.getBoundingClientRect();
-            const x = touch.clientX - rect.left - rect.width / 2;
-            const y = touch.clientY - rect.top - rect.height / 2;
-            cube.style.transform = `rotateY(${x * 0.1}deg) rotateX(${-y * 0.1}deg)`;
-        }, { passive: false });
-
-        cube.addEventListener('touchend', () => {
-            data.interacting = false;
-        });
-    });
-
-    // Движение кубов при скролле
-    window.addEventListener('scroll', () => {
-        const scrollY = window.scrollY;
-        document.querySelectorAll('.cube-container').forEach((container, index) => {
-            const speed = (index + 1) * (isMobile ? 0.05 : 0.1); // Уменьшенная скорость на мобильных
-            container.style.transform = `translateY(${scrollY * speed}px)`;
-        });
-    });
-
-    // Запуск анимации
-    requestAnimationFrame(animateCubes);
 
     const photos = document.querySelectorAll('#photos .photo');
     photos.forEach(photo => {
